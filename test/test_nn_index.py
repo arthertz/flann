@@ -56,7 +56,7 @@ class Test_PyFLANN_nn_index(unittest.TestCase):
             nnidx,nndist = nns[i].nn_index(x[i])
             correct[i] = all(nnidx == arange(N, dtype = index_type))
 
-        for i in reversed(range(numtests)):
+        for i in reversed(list(range(numtests))):
             if rand() < 0.5:
                 nns[i].delete_index()
             else:

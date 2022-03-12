@@ -53,7 +53,7 @@ class CustomStructure(Structure):
         self.update(self._defaults_)
 
     def update(self, dict):
-        for k, v in dict.items():
+        for k, v in list(dict.items()):
             if k in self.__field_names:
                 setattr(self, k, self.__translate(k, v))
             else:
@@ -80,7 +80,7 @@ class CustomStructure(Structure):
 
     def __translate_back(self, k, v):
         if k in self._translation_:
-            for tk, tv in self._translation_[k].items():
+            for tk, tv in list(self._translation_[k].items()):
                 if tv == v:
                     return tk
         return v

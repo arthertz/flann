@@ -53,17 +53,17 @@ def stacksize(since=0.0):
 
 if __name__ == '__main__':
 
-    print 'Profiling Memory usage for pyflann; CTRL-C to stop.'
-    print 'Increasing total process memory, relative to the python memory, '
-    print 'implies a memory leak in the external libs.'
-    print 'Increasing python memory implies a memory leak in the python code.'
+    print('Profiling Memory usage for pyflann; CTRL-C to stop.')
+    print('Increasing total process memory, relative to the python memory, ')
+    print('implies a memory leak in the external libs.')
+    print('Increasing python memory implies a memory leak in the python code.')
     
     h = hpy()
 
     while True:
         s = str(h.heap())
 
-        print 'Python: %s;    Process Total: %s' % (s[:s.find('\n')], memory())
+        print('Python: %s;    Process Total: %s' % (s[:s.find('\n')], memory()))
         
         X1 = rand(50000, 2)
         X2 = rand(50000, 2)
